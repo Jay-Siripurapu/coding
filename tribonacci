@@ -1,0 +1,30 @@
+import java.util.*;
+  
+public class Main 
+{ 
+    public static int trib(int n,int a,int b,int c) {
+        int temp=0;
+        if(n==1)
+        return a;
+        if(n==2)
+        return b;
+        if(n==3)
+        return c;
+        for(int i=4;i<=n;i++)
+        {
+            temp=a+b+c;
+            a=b;b=c;
+            c=temp;
+        }
+        return temp%10000007;
+    }
+    public static void main(String[] args)  
+    { 
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();int a=sc.nextInt();int b=sc.nextInt();int c=sc.nextInt();
+          
+            System.out.println(trib(n,a,b,c)); 
+          
+    } 
+  
+} 
